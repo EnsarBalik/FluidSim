@@ -1,0 +1,8 @@
+#pragma kernel ComputeBoundaryMasses
+#pragma kernel ComputeDensity
+#pragma kernel ComputeAccelerations
+#pragma kernel Integrate
+
+#define FLUIDSIM_DIMENSIONS 3
+
+#include "../Include/SesphBody.hlsl"

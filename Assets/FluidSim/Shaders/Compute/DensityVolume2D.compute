@@ -1,0 +1,5 @@
+#pragma kernel UpdateDensityTexture
+
+#define FLUIDSIM_DIMENSIONS 2
+
+#include "../Include/DensityVolumeBody.hlsl"

@@ -1,0 +1,19 @@
+{
+    "name": "FluidSim.Editor",
+    "rootNamespace": "FluidSim.Editor",
+    "references": [
+        "FluidSim.Runtime",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

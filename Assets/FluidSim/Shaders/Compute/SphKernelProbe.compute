@@ -1,0 +1,31 @@
+// Evaluates the cubic spline kernel at arbitrary offsets so that a test can compare
+// the HLSL implementation against the managed one in Runtime/Core/SphKernel.cs.
+// This exists purely as a correctness harness and is not part of the solver.
+
+#pragma kernel EvaluateKernel
+
+#include "../Include/SphKernel.hlsl"
+
+StructuredBuffer<float3> _SampleOffsets;
+
+// xyz holds grad W, w holds W.
+RWStructuredBuffer<float4> _Results;
+
+float _SupportRadius;
+float _Normalization;
+uint _SampleCount;
+
+[numthreads(64, 1, 1)]
+void EvaluateKernel(uint3 id : SV_DispatchThreadID)
+{
+    if (id.x >= _SampleCount)
+    {
+        return;
+    }
+
+    float3 offset = _SampleOffsets[id.x];
+    float3 gradient = SphKernelGradient(offset, _SupportRadius, _Normalization);
+    float value = SphKernel(length(offset), _SupportRadius, _Normalization);
+
+    _Results[id.x] = float4(gradient, value);
+}

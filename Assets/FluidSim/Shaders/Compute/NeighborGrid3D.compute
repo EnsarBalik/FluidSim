@@ -1,0 +1,16 @@
+// Three-dimensional instantiation of the neighbour grid.
+//
+// Identical to NeighborGrid2D.compute apart from the define: all of the logic lives in
+// NeighborGridBody.hlsl, so the two dimensions cannot drift apart.
+
+#pragma kernel ClearCells
+#pragma kernel CountCells
+#pragma kernel PrefixSumCells
+#pragma kernel ScatterParticles
+#pragma kernel ReorderParticles
+#pragma kernel CountNeighbors
+#pragma kernel CountNeighborsReference
+
+#define FLUIDSIM_DIMENSIONS 3
+
+#include "../Include/NeighborGridBody.hlsl"

@@ -1,0 +1,24 @@
+#pragma kernel ComputeBoundaryMasses
+#pragma kernel ComputeDensity
+#pragma kernel ComputeFactor
+#pragma kernel ComputeSurfaceNormals
+#pragma kernel ReorderAngularVelocities
+#pragma kernel PredictVelocity
+#pragma kernel PredictDensity
+#pragma kernel ComputeDivergence
+#pragma kernel ApplyPressure
+#pragma kernel IntegratePositions
+#pragma kernel SeedPredictedVelocities
+#pragma kernel FinalizeVelocities
+#pragma kernel AccumulateRigidForces
+#pragma kernel SeedViscosityState
+#pragma kernel JacobiViscosity
+#pragma kernel CommitViscosityIterate
+#pragma kernel ScatterRigidMasses
+#pragma kernel ReorderRigidMasses
+#pragma kernel ClearRigidForces
+#pragma kernel ReduceRigidForces
+
+#define FLUIDSIM_DIMENSIONS 3
+
+#include "../Include/DfsphBody.hlsl"

@@ -13,7 +13,7 @@ OcclusionCullingSettings:
 --- !u!104 &2
 RenderSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 9
+  serializedVersion: 10
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
@@ -38,13 +38,12 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 12
-  m_GIWorkflowMode: 1
+  serializedVersion: 13
+  m_BakeOnSceneLoad: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -67,9 +66,6 @@ LightmapSettings:
     m_LightmapParameters: {fileID: 0}
     m_LightmapsBakeMode: 1
     m_TextureCompression: 1
-    m_FinalGather: 0
-    m_FinalGatherFiltering: 1
-    m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
     m_MixedBakeMode: 2
     m_BakeBackend: 1
@@ -97,14 +93,14 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 20201, guid: 0000000000000000f000000000000000, type: 0}
   m_LightingSettings: {fileID: 0}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +113,9 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
+    maxJobWorkers: 0
+    preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
@@ -125,7 +123,8 @@ NavMeshSettings:
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 705507995}
@@ -141,16 +140,18 @@ GameObject:
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_Enabled: 1
-  serializedVersion: 8
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
-  m_CookieSize: 10
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -159,6 +160,24 @@ Light:
     m_Bias: 0.05
     m_NormalBias: 0.4
     m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -166,37 +185,49 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  m_RenderingLayerMask: 1
   m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ForceVisible: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+  m_LightUnit: 1
+  m_LuxAtDistance: 1
+  m_EnableSpotReflector: 1
 --- !u!4 &705507995
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -208,33 +239,44 @@ GameObject:
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.31746173, g: 0.37575582, b: 0.5471698, a: 1}
   m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
-  m_GateFitMode: 2
-  m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.05
+  far clip plane: 49.477264
+  field of view: 58
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -256,12 +298,307 @@ Camera:
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.09992351, y: 0, z: 0, w: 0.9949951}
+  m_LocalPosition: {x: 0, y: 1.4, z: -6.8999996}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 12.945, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c3e91f4b2d4e6a9c1f08d5e4b3a721, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FluidSim.Runtime::FluidSim.FreeFlyCamera
+  moveSpeed: 6
+  boostMultiplier: 3
+  lookSensitivity: 0.12
+  pitchLimits: {x: -89, y: 89}
+--- !u!1 &1094542499
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1094542504}
+  - component: {fileID: 1094542503}
+  - component: {fileID: 1094542502}
+  - component: {fileID: 1094542501}
+  - component: {fileID: 1094542500}
+  m_Layer: 0
+  m_Name: Fluid Simulation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1094542500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094542499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0966ebd861dcb459e6fb9e31c2a2d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FluidSim.Runtime::FluidSim.Rendering.FluidDemoVisuals
+  simulation: {fileID: 1094542503}
+  solidShader: {fileID: 4800000, guid: bc984b21cc06c84468163011bab2e55a, type: 3}
+  floorShader: {fileID: 4800000, guid: c10758d90280ef14092c13b64e209231, type: 3}
+  glassShader: {fileID: 4800000, guid: faab4fe746906c449b1250ef17e38887, type: 3}
+  drawTank: 1
+  drawFloor: 1
+  drawRigidBox: 1
+  glassColor: {r: 0.62, g: 0.8, b: 0.9, a: 0.11}
+  rigidColor: {r: 0.92, g: 0.45, b: 0.16, a: 1}
+  tileCol1: {r: 0.82, g: 0.78, b: 0.72, a: 1}
+  tileCol2: {r: 0.76, g: 0.8, b: 0.84, a: 1}
+  tileCol3: {r: 0.8, g: 0.74, b: 0.7, a: 1}
+  tileCol4: {r: 0.72, g: 0.76, b: 0.78, a: 1}
+  tileColVariation: {x: 0.02, y: 0.05, z: 0.06}
+  tileScale: 1.5
+  tileDarkOffset: -0.18
+  floorExtent: 24
+--- !u!114 &1094542501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094542499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f2a4e13ed8136f458cd8b06cb2224d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FluidSim.Runtime::FluidSim.Rendering.ScreenSpaceFluidRenderer
+  simulation: {fileID: 1094542503}
+  depthShader: {fileID: 4800000, guid: ab8272009d23df247bcf1306d626754c, type: 3}
+  thicknessShader: {fileID: 4800000, guid: 08c1d3e3843467343989447e61853dea, type: 3}
+  filterShader: {fileID: 4800000, guid: 3043c5c9f4496b24383cf1aa690c945e, type: 3}
+  compositeShader: {fileID: 4800000, guid: 764800b5d0419814c9771107a38956bb, type: 3}
+  diffuseShader: {fileID: 4800000, guid: aba9c342f16ea444e8d6e8883b947c2d, type: 3}
+  foamDepthCopyShader: {fileID: 4800000, guid: 7e19c4a8d2b14f6e9c3a5f80b1d246e7, type: 3}
+  shadowBlurShader: {fileID: 4800000, guid: 052a526a83e6e2b4185ffb941a2eb815, type: 3}
+  sceneBlurShader: {fileID: 4800000, guid: 8e4c1b7a92d04f6e9c3a15b8d6e2f047, type: 3}
+  densityVolumeShader2D: {fileID: 7200000, guid: 2b8f4c1d6e9a40b7a3c5d8e1f0a2b496, type: 3}
+  densityVolumeShader3D: {fileID: 7200000, guid: 9c3e1a7b4d2f48e09b6a5c8d1e0f2a34, type: 3}
+  depthRadiusScale: 2.4
+  thicknessRadiusScale: 2.4
+  thicknessMode: 0
+  thicknessContribution: 0.1
+  resolutionScale: 1
+  useHalfResThickness: 1
+  surfaceSmooth: 0
+  worldFilterRadius: 0
+  maxScreenSpaceFilterRadius: 0
+  filterIterations: 4
+  filterStrength: 0.85
+  depthThreshold: 0.12
+  backgroundBlur: 1.2
+  sceneBlurIterations: 2
+  backgroundReveal: 0.12
+  interiorMix: 0.4
+  absorptionCoefficient: {r: 0.55, g: 0.16, b: 0.07, a: 1}
+  densityMultiplier: 2
+  densityOffset: 150
+  densityTextureRes: 96
+  numRefractions: 4
+  indexOfRefraction: 1.33
+  lightStepSize: 0.4
+  scatterColor: {r: 0.02, g: 0.18, b: 0.28, a: 1}
+  refractionMultiplier: 1
+  specularPower: 96
+  specularIntensity: 0.7
+  fresnelStrength: 0.4
+  thicknessScale: 0.4
+  extinctionMultiplier: 0.4
+  rayMarchStep: 0.02
+  rayMarchSteps: 48
+  debugView: 0
+  planarFloor: 1
+  screenSpaceReflection: 0
+  ssrSteps: 32
+  ssrMaxDistance: 16
+  ssrStride: 0.08
+  ssrThickness: 0.55
+  castFluidShadow: 1
+  shadowMapSize: 512
+  shadowBlurIterations: 2
+  shadowExtinctionScale: 0.35
+  shadowAmbient: 0.17
+  diffuseRadiusScale: 0.3
+--- !u!114 &1094542502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094542499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee42227d6b1f2544b82b37019b6b9369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FluidSim.Runtime::FluidSim.Debugging.ParticleDebugRenderer
+  simulation: {fileID: 1094542503}
+  debugShader: {fileID: 4800000, guid: 43262a87682a32f43807e7bbf756deb2, type: 3}
+  colorBy: 1
+  autoRange: 1
+  valueRange: {x: 0, y: 16}
+  radiusScale: 1
+  drawInGameView: 0
+--- !u!114 &1094542503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094542499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f4a96660f2aa90459c372eefb0f21ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FluidSim.Runtime::FluidSim.Solver.FluidSimulation
+  parameters: {fileID: 11400000, guid: 6e120f218cee4764b83fd2c137b8f7e8, type: 2}
+  domainCenter: {x: 0, y: 0, z: 0}
+  domainSize: {x: 5.5, y: 3.5, z: 3}
+  hasAuthoredDomain: 1
+  neighborGridShader2D: {fileID: 7200000, guid: 0d04281ab91919b4282c5729b75d0d9b, type: 3}
+  neighborGridShader3D: {fileID: 7200000, guid: b3959661da437914bb991ad443f3d7a0, type: 3}
+  solverShader2D: {fileID: 7200000, guid: 35816bda2a9cc374fbc5c2e1439a8ca9, type: 3}
+  solverShader3D: {fileID: 7200000, guid: da931b83409241f41bb2e2110ac0c9f4, type: 3}
+  dfsphShader2D: {fileID: 7200000, guid: 71695ce1c2665574496cdbf31d39d30a, type: 3}
+  dfsphShader3D: {fileID: 7200000, guid: 22dc5835211616e499d58c72d72acfc1, type: 3}
+  diffuseShader2D: {fileID: 7200000, guid: 19ce376897d2cbb49b10df4fe69fcb1d, type: 3}
+  diffuseShader3D: {fileID: 7200000, guid: 338d0dc1cc2e06b428faaad184a38d10, type: 3}
+  pressureModel: 0
+  densityIterations: 3
+  divergenceIterations: 2
+  maxSubsteps: 8
+  performanceTuningVersion: 3
+  spawnSize: {x: 2, y: 2, z: 2}
+  spawnCenter: {x: -1.5, y: 0.5, z: 0}
+  spawnJitter: 0.05
+  spawnSeed: 1
+  spawnDemoRigidBox: 1
+  rigidBoxSize: {x: 0.5, y: 0.5, z: 0.5}
+  rigidBoxCenter: {x: 1.2, y: -1.55, z: 0}
+  rigidDensity: 400
+  rigidIsKinematic: 0
+  allowGameViewDrag: 1
+  enableDiffuse: 1
+  maxDiffuseParticles: 65536
+  trappedAirMin: 2
+  trappedAirMax: 12
+  waveCrestMin: 2
+  waveCrestMax: 8
+  energyMin: 4
+  energyMax: 32
+  trappedAirRate: 70
+  waveCrestRate: 20
+  foamLifetimeMin: 5
+  foamLifetimeMax: 15
+  bubbleBuoyancy: 1.5
+  bubbleDrag: 3
+--- !u!4 &1094542504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094542499}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1349880581}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1349880580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1349880581}
+  - component: {fileID: 1349880582}
+  m_Layer: 0
+  m_Name: Reflection Probe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1349880581
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349880580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1094542504}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!215 &1349880582
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349880580}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 2
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_BoxSize: {x: 6, y: 4, z: 4}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_Importance: 1
+  m_CustomBakedTexture: {fileID: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 963194228}
+  - {fileID: 705507995}
+  - {fileID: 1094542504}

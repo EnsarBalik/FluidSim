@@ -1,0 +1,7 @@
+#pragma kernel EvaluatePotential
+#pragma kernel SpawnDiffuse
+#pragma kernel AdvectDiffuse
+
+#define FLUIDSIM_DIMENSIONS 2
+
+#include "../Include/DiffuseBody.hlsl"
